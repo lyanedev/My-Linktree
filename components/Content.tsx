@@ -6,9 +6,9 @@ import {AiFillGithub, AiFillInstagram, AiFillLinkedin, AiOutlineTwitter} from 'r
 
 export default function Content() {
 
-    const NOTIFY = () => toast('Coming soon...', {
-        position: 'bottom-center',
-        icon: '😋'
+    const NOTIFY = () => toast('Coming soon!', {
+        position: 'top-right',
+        icon: '🚀'
     });
 
     return (
@@ -23,8 +23,8 @@ export default function Content() {
                         height={150}
                     />
                     <div className={'flex gap-2 items-center'}>
-                        <h1 className={'text-2xl text-white'}>{data.name}</h1>
-                        <h2 className={'text-2xl text-[#182635d9]'}>{data.brand}</h2>
+                        <h1 className={'text-xl font-semibold text-white'}>{data.name}</h1>
+                        <h2 className={'text-xl font-medium text-[#182635d9]'}>{data.brand}</h2>
                     </div>
                     <p className={'text-sm text-white font-light text-center'}>{data.description}</p>
                 </div>
