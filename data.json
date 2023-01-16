@@ -1,0 +1,40 @@
+{
+  "image": "/images/lyane-lamara.jpg",
+  "name": "Lyane Lamara",
+  "brand": "lyanedev",
+  "description": "🇫🇷 Front End Developer | JavaScript | TypeScript | React | Software Craftsmanship",
+  "links": [
+    {
+      "title": "Portfolio Website",
+      "image": "#",
+      "url": "https://www.lyane.dev/"
+    },
+    {
+      "title": "Last project",
+      "image": "#",
+      "url": "#"
+    }
+  ],
+  "social": [
+    {
+      "title": "GitHub",
+      "available": true,
+      "url": "https://github.com/lyanedev"
+    },
+    {
+      "title": "LinkedIn",
+      "available": true,
+      "url": "https://www.linkedin.com/in/lyane-lamara/"
+    },
+    {
+      "title": "Instagram",
+      "available": false,
+      "url": "https://www.instagram.com/lyanedev/"
+    },
+    {
+      "title": "Twitter",
+      "available": false,
+      "url": "https://twitter.com/lyanedev"
+    }
+  ]
+}
