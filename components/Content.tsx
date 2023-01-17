@@ -1,19 +1,19 @@
 import Image from 'next/image'
 
-import toast, { Toaster } from 'react-hot-toast'
-import {AiFillGithub, AiFillInstagram, AiFillLinkedin, AiOutlineDribbble, AiOutlineTwitter} from 'react-icons/ai'
 import data from '../data.json'
+import Button from './Button'
+
+
+export enum ButtonType {
+    LINK = 'link',
+    SOCIAL = 'social'
+}
 
 export default function Content() {
 
-    const NOTIFY = () => toast('Coming soon!', {
-        position: 'top-right',
-        icon: '🚀'
-    });
-
     return (
-        <>
-            <header className={'w-full flex flex-col items-center mt-16 px-12'}>
+        <div className={'w-full flex flex-col gap-12 my-6 max-w-2xl mx-auto'}>
+            <header className={'w-full flex flex-col items-center px-12'}>
                 <div className={'flex flex-col gap-4 items-center'}>
                     <Image
                         src={data.image}
@@ -26,59 +26,42 @@ export default function Content() {
                         <h1 className={'text-xl font-semibold text-white'}>{data.name}</h1>
                         <h2 className={'text-xl font-medium text-[#31475E]'}>{data.brand}</h2>
                     </div>
-                    <p className={'text-sm text-white font-light text-center'}>{data.description}</p>
+                    <div className={'w-full md:w-2/3 lg:w-1/2'}>
+                        <p className={'text-sm text-white font-light text-center'}>{data.description}</p>
+                    </div>
                 </div>
             </header>
 
-            <main>
-                <div className={'w-full px-6 flex flex-col justify-between gap-4 mt-6'}>
-                    {
-                        data.links.map((link, index) => (
-                            <a
-                                key={index}
-                                href={link.url}
-                                target={'_blank'}
-                                rel={'noreferrer'}
-                            >
-                                <button
-                                    type={'button'}
-                                    className={'w-full flex gap-3 bg-[#1C2835] text-white rounded-xl border-white border-2 px-6 py-2 hover:scale-105 active:scale-95 transition-all'}
-                                >
-                                    {link.image} {link.title}
-                                </button>
-                            </a>
-                        ))
-                    }
-                    <div className={'w-2/3 mx-auto border-b-2 border-white my-2'}></div>
-                    {
-                        data.social.map((link, index) => (
-                            <a
-                                key={index}
-                                href={link.available ? link.url : undefined}
-                                target={'_blank'}
-                                rel={'noreferrer'}
-                            >
-                                <button
-                                    type={'button'}
-                                    className={'w-full flex items-center gap-3 bg-[#1C2835] text-white rounded-xl border-white border-2 px-6 py-2 hover:scale-105 active:scale-95 transition-all'}
-                                    onClick={link.available ? undefined : NOTIFY}
-                                >
-                                    {link.title === 'GitHub' ? <AiFillGithub/> : link.title === 'Twitter' ? <AiOutlineTwitter/> : link.title === "Instagram" ? <AiFillInstagram/> : link.title === 'Dribbble' ? <AiOutlineDribbble/> : <AiFillLinkedin/>}
-                                    {link.title}
-                                </button>
-                            </a>
-                        ))
-                    }
-                    <Toaster/>
-                </div>
+            <main className={'w-full px-6 flex flex-col justify-between gap-4'}>
+                {
+                    data.links.map((link, index) => (
+                        <Button
+                            key={index}
+                            link={link}
+                            type={ButtonType.LINK}
+                        />
+                    ))
+                }
+
+                <div className={'w-2/3 mx-auto border-b-2 border-white my-2'}></div>
+
+                {
+                    data.social.map((link, index) => (
+                        <Button
+                            key={index}
+                            link={link}
+                            type={ButtonType.SOCIAL}
+                        />
+                    ))
+                }
             </main>
 
             <footer>
-                <div className={'w-full flex flex-col items-center px-6 mt-12 mb-3'}>
-                    <p className={'text-sm font-light text-[#8A9198]'}>Coded from scratch with ♥️</p>
+                <div className={'w-full flex flex-col items-center px-6'}>
+                    <p className={'text-sm font-light text-[#8A9198]'}>Coded from scratch with <span className={'animate-ping'}>♥️</span></p>
                     <p className={'text-sm font-light text-[#8A9198]'}>Lyane Lamara © 2023</p>
                 </div>
             </footer>
-        </>
+        </div>
     )
 }
