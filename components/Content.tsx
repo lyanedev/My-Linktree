@@ -1,8 +1,8 @@
-import Image from "next/image"
-import data from '../data.json'
+import Image from 'next/image'
 
-import toast, {Toaster} from 'react-hot-toast'
-import {AiFillGithub, AiFillInstagram, AiFillLinkedin, AiOutlineTwitter} from 'react-icons/ai'
+import toast, { Toaster } from 'react-hot-toast'
+import {AiFillGithub, AiFillInstagram, AiFillLinkedin, AiOutlineDribbble, AiOutlineTwitter} from 'react-icons/ai'
+import data from '../data.json'
 
 export default function Content() {
 
@@ -24,7 +24,7 @@ export default function Content() {
                     />
                     <div className={'flex gap-2 items-center'}>
                         <h1 className={'text-xl font-semibold text-white'}>{data.name}</h1>
-                        <h2 className={'text-xl font-medium text-[#182635d9]'}>{data.brand}</h2>
+                        <h2 className={'text-xl font-medium text-[#31475E]'}>{data.brand}</h2>
                     </div>
                     <p className={'text-sm text-white font-light text-center'}>{data.description}</p>
                 </div>
@@ -42,7 +42,7 @@ export default function Content() {
                             >
                                 <button
                                     type={'button'}
-                                    className={'w-full flex gap-3 bg-[#182635d9] text-white rounded-xl border-white border-2 px-6 py-2 hover:scale-105 active:scale-95 transition-all'}
+                                    className={'w-full flex gap-3 bg-[#1C2835] text-white rounded-xl border-white border-2 px-6 py-2 hover:scale-105 active:scale-95 transition-all'}
                                 >
                                     {link.image} {link.title}
                                 </button>
@@ -60,10 +60,10 @@ export default function Content() {
                             >
                                 <button
                                     type={'button'}
-                                    className={'w-full flex items-center gap-3 bg-[#182635d9] text-white rounded-xl border-white border-2 px-6 py-2 hover:scale-105 active:scale-95 transition-all'}
+                                    className={'w-full flex items-center gap-3 bg-[#1C2835] text-white rounded-xl border-white border-2 px-6 py-2 hover:scale-105 active:scale-95 transition-all'}
                                     onClick={link.available ? undefined : NOTIFY}
                                 >
-                                    {link.title === 'GitHub' ? <AiFillGithub/> : link.title === 'Twitter' ? <AiOutlineTwitter/> : link.title === "Instagram" ? <AiFillInstagram/> : <AiFillLinkedin/>}
+                                    {link.title === 'GitHub' ? <AiFillGithub/> : link.title === 'Twitter' ? <AiOutlineTwitter/> : link.title === "Instagram" ? <AiFillInstagram/> : link.title === 'Dribbble' ? <AiOutlineDribbble/> : <AiFillLinkedin/>}
                                     {link.title}
                                 </button>
                             </a>

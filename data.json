@@ -22,19 +22,24 @@
       "url": "https://github.com/lyanedev"
     },
     {
-      "title": "LinkedIn",
+      "title": "Dribbble",
       "available": true,
-      "url": "https://www.linkedin.com/in/lyane-lamara/"
+      "url": "https://dribbble.com/lyanedev"
     },
     {
-      "title": "Instagram",
-      "available": false,
-      "url": "https://www.instagram.com/lyanedev/"
+      "title": "LinkedIn",
+      "available": true,
+      "url": "https://www.linkedin.com/in/lyanelamara/"
     },
     {
       "title": "Twitter",
       "available": false,
       "url": "https://twitter.com/lyanedev"
+    },
+    {
+      "title": "Instagram",
+      "available": false,
+      "url": "https://www.instagram.com/lyanedev/"
     }
   ]
 }
