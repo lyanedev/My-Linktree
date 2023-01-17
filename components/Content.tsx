@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 import data from '../data.json'
-import Button from './Button'
+import CustomButton from './CustomButton'
 
 
 export enum ButtonType {
@@ -35,7 +35,7 @@ export default function Content() {
             <main className={'w-full px-6 flex flex-col justify-between gap-4'}>
                 {
                     data.links.map((link, index) => (
-                        <Button
+                        <CustomButton
                             key={index}
                             link={link}
                             type={ButtonType.LINK}
@@ -47,7 +47,7 @@ export default function Content() {
 
                 {
                     data.social.map((link, index) => (
-                        <Button
+                        <CustomButton
                             key={index}
                             link={link}
                             type={ButtonType.SOCIAL}
