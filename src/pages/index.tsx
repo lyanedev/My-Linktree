@@ -7,7 +7,7 @@ export default function Home() {
 
     const WELCOME = () => toast.error('Welcome!', {
         position: 'top-right',
-        duration: 1500,
+        duration: 2500,
         icon: '👋',
         id: 'ID'
     })
