@@ -1,8 +1,21 @@
 import Head from 'next/head'
 import Content from '../../components/Content'
-
+import {useEffect} from 'react'
+import toast, {Toaster} from 'react-hot-toast'
 
 export default function Home() {
+
+    const WELCOME = () => toast.error('Welcome!', {
+        position: 'top-right',
+        duration: 1500,
+        icon: '👋',
+        id: 'ID'
+    })
+
+    useEffect(() => {
+        WELCOME()
+    }, []);
+
     return (
         <>
             <Head>
@@ -11,6 +24,7 @@ export default function Home() {
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
             </Head>
             <Content/>
+            <Toaster/>
         </>
     )
 }
