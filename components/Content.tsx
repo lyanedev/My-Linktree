@@ -58,7 +58,7 @@ export default function Content() {
 
             <footer className={'flex justify-between items-end px-6'}>
                 <div className={'flex flex-col md:flex-col-reverse items-start'}>
-                    <p className={'text-sm font-light text-[#8A9198]'}>Coded from scratch with ♥️</p>
+                    <p className={'text-sm font-light text-[#8A9198]'}>Coded from scratch with ❤️</p>
                     <p className={'text-sm font-light text-[#8A9198]'}>Lyane Lamara © 2023</p>
                 </div>
                 <div>
