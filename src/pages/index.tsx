@@ -1,12 +1,25 @@
+import {useState} from 'react'
 import Head from 'next/head'
 import Content from '../../components/Content'
 import {useEffect} from 'react'
 import toast, {Toaster} from 'react-hot-toast'
 
-export default function Home() {
 
-    const WELCOME = () => toast.error('Welcome!', {
-        position: 'top-right',
+export default function Home() {
+    const [WIDTH, setWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0)
+
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            const handleResize = () => setWidth(window.innerWidth)
+            window.addEventListener('resize', handleResize)
+            return () => {
+                window.removeEventListener('resize', handleResize)
+            }
+        }
+    }, []);
+
+    const WELCOME = () => toast('Welcome!', {
+        position: WIDTH <= 768 ? 'bottom-center' : 'top-right',
         duration: 2500,
         icon: '👋',
         id: 'ID'
@@ -14,7 +27,7 @@ export default function Home() {
 
     useEffect(() => {
         WELCOME()
-    }, []);
+    }, [])
 
     return (
         <>
