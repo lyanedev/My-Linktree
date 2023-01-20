@@ -2,6 +2,8 @@ import Image from 'next/image'
 
 import data from '../data.json'
 import CustomButton from './CustomButton'
+import MyLogo from './MyLogo'
+import { MdEmail } from 'react-icons/md'
 
 
 export enum ButtonType {
@@ -13,7 +15,7 @@ export default function Content() {
 
     return (
         <div className={'w-full flex flex-col gap-12 my-6 max-w-2xl mx-auto'}>
-            <header className={'w-full flex flex-col items-center px-12'}>
+            <header className={'w-full flex flex-col items-center px-12 mt-4'}>
                 <div className={'flex flex-col gap-4 items-center'}>
                     <Image
                         src={data.image}
@@ -56,19 +58,27 @@ export default function Content() {
                 }
             </main>
 
-            <footer className={'flex justify-between items-end px-6'}>
-                <div className={'flex flex-col md:flex-col-reverse items-start'}>
-                    <p className={'text-sm font-light text-[#8A9198]'}>Coded from scratch with ❤️</p>
-                    <p className={'text-sm font-light text-[#8A9198]'}>Lyane Lamara © 2023</p>
+            <footer
+                className={'w-full px-6 md:px-0 flex flex-col justify-center items-center gap-10 mt-4'}>
+                <div className={'w-full flex flex-col gap-2 items-center'}>
+                    <div className={'w-36'}>
+                        <MyLogo/>
+                    </div>
+                    <div className={'flex gap-1 items-center'}>
+                        <MdEmail className={'text-[#8A9198]'}/>
+                        <a
+                            href={'mailto:hey@lyane.dev'}
+                            target={'_blank'}
+                            rel={'noreferrer'}
+                            className={'text-sm font-medium text-[#8A9198] underline'}
+                        >
+                            hey@lyane.dev
+                        </a>
+                    </div>
                 </div>
-                <div>
-                    <a
-                        href={'mailto:hey@lyane.dev'}
-                        target={'_blank'}
-                        rel={'noreferrer'}
-                        className={'text-sm font-medium text-[#8A9198] underline'}
-                    >hey@lyane.dev</a>
-                </div>
+
+                <p className={'text-sm font-light text-[#8A9198]'}>Made with ❤️ by Lyane Lamara © 2023</p>
+
             </footer>
         </div>
     )
